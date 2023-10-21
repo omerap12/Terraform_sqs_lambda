@@ -1,12 +1,12 @@
 module "sqs" {
   source = "terraform-aws-modules/sqs/aws"
 
-  name = "test-sqs"
+  name = var.sqs_name
 
   fifo_queue = true
   content_based_deduplication = true
 
   tags = {
-    Environment = "dev"
+    Environment = var.Environment_tag_sqs
   }
 }

@@ -1,7 +1,7 @@
 module "lambda_function" {
   source = "terraform-aws-modules/lambda/aws"
 
-  function_name = "test_lambda"
+  function_name = var.lambda_function_name
   description   = "Test sending sqs messages"
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.8"
@@ -13,7 +13,7 @@ module "lambda_function" {
     sqs = module.sqs.queue_id
   }
   tags = {
-    Name = "test_lambda"
+    Name = var.lambda_function_name
   }
   depends_on = [module.sqs]
 }
