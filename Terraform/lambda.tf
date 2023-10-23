@@ -3,11 +3,11 @@ module "lambda_function" {
 
   function_name = var.lambda_function_name
   description   = "Test sending sqs messages"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "lambda_write_sqs.lambda_handler"
   runtime       = "python3.8"
   create_role   = true
 
-  source_path = "lambda_function.py"
+  source_path = "../code/lambda_write_sqs.py"
 
   environment_variables = {
     sqs = module.sqs.queue_id

@@ -4,12 +4,12 @@
 variable "lambda_function_name" {
   type = string
   description = "Name of the Lambda function"
-  default = "test_lambda"
+  default = "lambda_write_to_sqs"
 }
 variable "lambda_policy_name" {
     type = string
     description = "Name of added lambda policy for sqs"
-    default = "Lambda_sqs_policy"
+    default = "lambda_write_sqs_policy"
 }
 
 # ------------------------------------------------------------
@@ -18,7 +18,7 @@ variable "lambda_policy_name" {
 variable "sqs_name" {
     type = string
     description = "Name of the sqs"
-    default = "test-sqs"
+    default = "demo-sqs"
 }
 
 variable "Environment_tag_sqs" {
