@@ -1,7 +1,7 @@
 
 # AWS Lambda Function for Sending SQS Messages
 
-This Terraform configuration deploys an AWS Lambda function (test_lambda) that sends messages to an SQS (Simple Queue Service) queue named test-sqs. The Lambda function is triggered manually and demonstrates how to send a message to an SQS queue using Python and the Boto3 AWS SDK. The Terraform modules used here create the necessary AWS resources and manage their configurations.
+This Terraform configuration is designed to deploy two AWS Lambda functions, namely `lambda_write_sqs.py` and `lambda_read_sqs.py`, which are responsible for sending and receiving messages to and from an AWS FIFO SQS (Simple Queue Service). These Lambda functions showcase the process of manually triggering events and demonstrate how to exchange messages with an SQS queue using Python and the Boto3 AWS SDK. The configuration utilizes Terraform modules to create essential AWS resources and handle their configurations effectively.
 
 ## Prerequisites
 Before you begin, ensure you have:
