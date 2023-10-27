@@ -1,5 +1,5 @@
-resource "aws_iam_policy" "lambda_policy" {
-  name        = var.lambda_policy_name
+resource "aws_iam_policy" "write_lambda_policy" {
+  name        = var.write_lambda_function_name
   description = "Policy that allows lambda access to sqs"
   policy = jsonencode({
     Version = "2012-10-17",
@@ -7,7 +7,6 @@ resource "aws_iam_policy" "lambda_policy" {
       Sid    = "VisualEditor0",
       Effect = "Allow",
       Action = [
-        "sqs:ReceiveMessage",
         "sqs:SendMessage",
         "sqs:GetQueueAttributes"
       ],
@@ -18,9 +17,8 @@ resource "aws_iam_policy" "lambda_policy" {
 
 }
 
-resource "aws_iam_role_policy_attachment" "attach_lambda_role" {
-  role       = module.lambda_function.lambda_role_name
-  policy_arn = aws_iam_policy.lambda_policy.arn
-  depends_on = [module.lambda_function]
-
+resource "aws_iam_role_policy_attachment" "attach_lambda_role_write" {
+  role       = module.write_lambda_function.lambda_role_name
+  policy_arn = aws_iam_policy.write_lambda_policy.arn
+  depends_on = [module.write_lambda_function]
 }
