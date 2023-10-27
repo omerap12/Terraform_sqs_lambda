@@ -10,11 +10,11 @@ AWS credentials configured locally with appropriate permissions.
 Terraform installed on your system.
 
 ## Files Included
-### Code
+### Code:
 * lambda_write_sqs.py: Python code for the Lambda function, sending messages to the SQS queue.
 * lambda_read_sqs.py:  Python code for the Lambda function, receiving messages from the SQS queue.
 
-### Terraform
+### Terraform:
 * sqs.tf: Defines the creation of the SQS FIFO queue.
 * write_sqs_lambda.tf: Terraform configuration for the Lambda function responsible for sending messages to SQS.
 * write_policy.tf: Terraform configuration for the permission policies associated with the Lambda function sending messages.
